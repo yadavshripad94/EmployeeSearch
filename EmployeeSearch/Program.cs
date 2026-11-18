@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AngularPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
