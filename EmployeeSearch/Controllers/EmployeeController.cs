@@ -15,12 +15,13 @@ namespace EmployeeSearch.Controllers
             _context=con;
         }
 
-        [HttpGet]
-        public IActionResult GetEmployees()
+        [HttpGet("GetAllEmployees")]
+        public IActionResult GetAllEmployees()
         {
             var emp = _context.Employees.ToList();
             return Ok(emp);
         }
+
 
         [HttpGet("SearchName")]
         public IActionResult SearchEmployees(string name)

@@ -1,0 +1,189 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f6f8;
+}
+
+/* Navigation Bar */
+.navbar {
+  height: 65px;
+  background: #294e78;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.company {
+  font-size: 14px;
+}
+
+/* Main Container */
+.main-container {
+  padding: 25px 45px;
+  min-height: calc(100vh - 65px);
+}
+
+/* Employee Card */
+.employee-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  min-height: 500px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* Header */
+.header-section h1 {
+  font-size: 30px;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.header-section p {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+/* Search */
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.search-section input {
+  flex: 1;
+  height: 48px;
+  padding: 0 15px;
+  font-size: 17px;
+  border: 1px solid #b8c7da;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-section input:focus {
+  border-color: #80aef5;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.search-section button {
+  width: 115px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: #1265e8;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.search-section button:hover {
+  background: #0955cc;
+}
+
+/* Table */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background: #d2e1fa;
+}
+
+th {
+  padding: 18px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #111;
+  border-bottom: 1px solid #bbb;
+}
+
+td {
+  padding: 11px 16px;
+  font-size: 15px;
+  color: #292929;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f0f2f5;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+  color: #888;
+  font-size: 15px;
+}
+
+.directory {
+  background: #d2e1fa;
+  color: #1265e8;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .employee-card {
+    padding: 18px;
+  }
+
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .search-section {
+    flex-direction: column;
+  }
+
+  .search-section button {
+    width: 100%;
+  }
+
+  .footer {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  table {
+    min-width: 650px;
+  }
+}
