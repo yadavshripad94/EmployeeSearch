@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,7 +14,7 @@ export class App implements OnInit{
 
 
   employeeList=signal<any[]>([]);
-
+  searchtxt:string='';
   constructor(private http:HttpClient){
 
   }
@@ -26,7 +26,7 @@ export class App implements OnInit{
  GetAllEmployees(){
   this.http.get("https://localhost:7266/api/Employee/GetAllEmployees").subscribe({
     next:(res:any)=>{
-
+      this.employeeList.set(res);
     },
     error:(err:any)=>{
 
@@ -34,4 +34,25 @@ export class App implements OnInit{
   });
  }
 
+ searchEmployee() {
+
+  if (this.searchtxt.trim() == '') {
+    this.GetAllEmployees();
+    return;
+  }
+
+  this.http.get<any[]>(
+    `https://localhost:7266/api/Employee/SearchName?name=${encodeURIComponent(this.searchtxt.trim())}`
+  ).subscribe({
+    next: (res: any[]) => {
+      this.employeeList.set(res);
+    },
+    error: (err: any) => {
+      console.log(err);
+    }
+  });
 }
+
+ }
+
+

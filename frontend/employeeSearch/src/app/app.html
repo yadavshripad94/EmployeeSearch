@@ -17,9 +17,11 @@
       <input
         type="text"
         placeholder="Search employee by name..."
+        name="emp"
+        [(ngModel)]="searchtxt"
       />
 
-      <button type="button">Search</button>
+      <button type="button" (click)="searchEmployee()">Search</button>
     </div>
 
     <!-- Employee Table -->
@@ -35,12 +37,16 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Shreya Patil</td>
-            <td>shreya@gmail.com</td>
-            <td>Pune</td>
+          @for (emp of employeeList(); track $index) 
+          {
+            <tr>
+            <td>{{$index +1}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.city}}</td>
           </tr>
+          }
+          
         </tbody>
       </table>
     </div>
